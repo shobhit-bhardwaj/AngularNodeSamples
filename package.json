@@ -1,0 +1,22 @@
+{
+  "name": "nodesamples",
+  "version": "1.0.0",
+  "description": "Node JS Basic Examples",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shobhit-bhardwaj/NodeSamples.git"
+  },
+  "author": "Shobhit Bhardwaj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shobhit-bhardwaj/NodeSamples/issues"
+  },
+  "homepage": "https://github.com/shobhit-bhardwaj/NodeSamples#readme"
+}
