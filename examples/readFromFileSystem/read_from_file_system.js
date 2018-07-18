@@ -1,7 +1,7 @@
 var fs = require('fs');
 
 function readFromFileSystem() {
-	var path = './sample.txt';
+	var path = './examples/readFromFileSystem/sample.txt';
 
 	fs.readFile(path, "utf8", (error, data) => {
 		if(error)
