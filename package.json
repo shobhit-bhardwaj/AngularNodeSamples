@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/shobhit-bhardwaj/NodeSamples/issues"
   },
-  "homepage": "https://github.com/shobhit-bhardwaj/NodeSamples#readme"
+  "homepage": "https://github.com/shobhit-bhardwaj/NodeSamples#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
 }
