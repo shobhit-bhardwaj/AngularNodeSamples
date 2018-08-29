@@ -2,13 +2,19 @@
 <hr/>
 <input type="button" value="Odd / Even" (click)="toggleSelection()" />
 <br/>
-<div *ngIf="odd">
+<div *ngIf="isOdd">
   <ul>
-    <li *ngFor="let number of oddNumbers">{{ number }}</li>
+    <li *ngFor="let number of oddNumbers"
+        [ngClass]="{odd : number % 2 == 1}"
+        [ngStyle]="{backgroundColor: 'green'}"
+    >{{ number }}</li>
   </ul>
 </div>
-<div *ngIf="!odd">
+<div *ngIf="!isOdd">
   <ul>
-    <li *ngFor="let number of evenNumbers">{{ number }}</li>
+    <li *ngFor="let number of evenNumbers"
+        [ngClass]="{even : number % 2 == 0}"
+        [ngStyle]="{backgroundColor: 'red'}"
+    >{{ number }}</li>
   </ul>
 </div>

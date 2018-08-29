@@ -6,13 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  odd = false;
+  isOdd = true;
   oddNumbers: Number[] = [1, 3, 5];
   evenNumbers: Number[] = [2, 4, 6];
 
   constructor() {}
 
   toggleSelection() {
-    this.odd = !this.odd;
+    this.isOdd = !this.isOdd;
   }
 }
