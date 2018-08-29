@@ -1,0 +1,14 @@
+<h3>Test Application</h3>
+<hr/>
+<input type="button" value="Odd / Even" (click)="toggleSelection()" />
+<br/>
+<div *ngIf="odd">
+  <ul>
+    <li *ngFor="let number of oddNumbers">{{ number }}</li>
+  </ul>
+</div>
+<div *ngIf="!odd">
+  <ul>
+    <li *ngFor="let number of evenNumbers">{{ number }}</li>
+  </ul>
+</div>
