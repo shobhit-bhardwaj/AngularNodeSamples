@@ -1,0 +1,10 @@
+<h3>Test Application</h3>
+<hr/>
+<app-child (personAdded)="onPersonAdded($event)"></app-child>
+<hr>
+<table>
+  <tr *ngFor="let person of persons">
+    <td>{{ person.name }}</td>
+    <td>{{ person.age }}</td>
+  </tr>
+</table>
