@@ -1,0 +1,8 @@
+<h3>Custom Structural Directives</h3>
+
+<hr/>
+<input type="button" value="Show/Hide" (click)="toggleShow()" >
+<br><br>
+Show Status - {{ show }}
+<br><br>
+<p *appElseDirective="show">This is Custom Structural Directive.</p>
