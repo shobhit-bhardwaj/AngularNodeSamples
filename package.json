@@ -11,15 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shobhit-bhardwaj/NodeSamples.git"
+    "url": "git+https://github.com/shobhit-bhardwaj/AngularNodeSamples.git"
   },
   "author": "Shobhit Bhardwaj",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shobhit-bhardwaj/NodeSamples/issues"
+    "url": "https://github.com/shobhit-bhardwaj/AngularNodeSamples/issues"
   },
-  "homepage": "https://github.com/shobhit-bhardwaj/NodeSamples#readme",
+  "homepage": "https://github.com/shobhit-bhardwaj/AngularNodeSamples#readme",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "joi": "^13.6.0"
   }
 }
