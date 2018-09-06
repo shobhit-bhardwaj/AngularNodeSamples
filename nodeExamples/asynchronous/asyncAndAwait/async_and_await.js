@@ -1,14 +1,18 @@
 console.log('Start Program');
 
 async function displayCommits() {
-	const user = await getUser(101);
-	console.log('User - ', user);
+	try {
+		const user = await getUser(101);
+		console.log('User - ', user);
 
-	const repos = await getRepository(user.userName);
-	console.log('Repository - ', repos);
+		const repos = await getRepository(user.userName);
+		console.log('Repository - ', repos);
 
-	const commits = await getCommits(repos[0]);
-	console.log('Commits - ', commits);
+		const commits = await getCommits(repos[0]);
+		console.log('Commits - ', commits);
+	} catch (error) {
+		console.log('Error Occurred - ', error)
+	}
 }
 
 displayCommits();
