@@ -1,10 +1,7 @@
 const mongoose = require('mongoose');
+const Joi = require('joi');
 
-mongoose.connect('mongodb://localhost/test_db')
-	.then((result) => console.log('MongoDB Connection Successfull'))
-	.catch((error) => console.log('Error in Connection - ', error));
-
-const courseSchema = mongoose.Schema({
+const Course = mongoose.model("Course", mongoose.Schema({
 	name: {
 		type: String,
 		required: true,
@@ -53,26 +50,21 @@ const courseSchema = mongoose.Schema({
 		get: value => Math.round(value),
 		set: value => Math.round(value)
 	}
-});
+}));
 
-const Course = mongoose.model("Course", courseSchema);
+function validateCourse(course) {
+	const courseSchema = {
+		name: Joi.string().min(5).max(100).required(),
+		category: Joi.string().min(3).max(10).required(),
+		author: Joi.string().required(),
+		tags: Joi.array().required(),
+		releaseDate: Joi.date(),
+		isPublished: Joi.bool().required(),
+		price: Joi.number().min(5).max(10)
+	};
 
-const course = new Course({
-	name: ' NodeJS  ',
-	category: 'Web',
-	author: 'Shobhit Bhardwaj',
-	tags: ['nodejs', 'backend'],
-	isPublished: true,
-	price: 10.78
-});
+	return Joi.validate(course, courseSchema);
+}
 
-/*course.validate()
-	.then(result => console.log('Result - ', result))
-	.catch(error => console.log('Error - ', error.message));*/
-
-course.save()
-	.then(result => console.log('Result - ', result))
-	.catch(exception => {
-		for(index in exception.errors)
-			console.log('Error - ', exception.errors[index].message);
-	});
+module.exports.Course = Course;
+module.exports.validateCourse = validateCourse;
