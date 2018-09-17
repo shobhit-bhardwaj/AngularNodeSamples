@@ -3,7 +3,6 @@ const {User} = require('../model/user');
 const Joi = require('joi');
 const _ = require('lodash');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const router = express.Router();
 
 router.post('/', async (request, response) => {
@@ -21,8 +20,9 @@ router.post('/', async (request, response) => {
 	if(!valid)
 		return response.status(400).send('Invalid Username or Password');
 
-	const token = jwt.sign({id: user._id, email: user.email}, 'my-private-key');
-	response.send(token);
+	const token = user.generateAuthToken();
+	response.header('x-auth-token', token);
+	response.send(true);
 });
 
 function validate(user) {
