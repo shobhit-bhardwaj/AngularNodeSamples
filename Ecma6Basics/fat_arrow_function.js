@@ -15,6 +15,8 @@ console.log('Sum is - ', fn2(2, 5));
 
 //	In Simple Function, this hold the reference of calling.
 //	In Arrow Function, this holds the reference of Main Window Object
+//	Arrow function is use for standalone function, because it do not
+//	contains this as an object reference.
 
 var main = function() {
 	fnSimple();
