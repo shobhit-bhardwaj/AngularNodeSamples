@@ -9,9 +9,11 @@ mongoose.connect('mongodb://l4dvidap6393/test_db')
 
 const users = require('./routes/users');
 const auth = require('./routes/auth');
+const courses = require('./routes/courses');
 
 app.use('/api/users', users);
 app.use('/api/auth', auth);
+app.use('/api/courses', courses);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
